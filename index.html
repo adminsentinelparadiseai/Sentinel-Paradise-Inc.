@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Sentinel | Supplying Compliance for Aerospace & Defense</title>
+  <meta name="description" content="Sentinel Paradise is a governance and risk management firm implementing Artificial Intelligence Management Systems (ISO 42001, CMMC/NIST SP 800-171)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-dark: #070c14;
+      --bg-hero: #0b1320;
+      --bg-card: #0f1928;
+      --bg-slate: #232c3a;
+      --bg-light: #f4f6f9;
+      --accent-blue: #0066ff;
+      --accent-cyan: #38bdf8;
+      --accent-red: #d97706;
+      --accent-burgundy: #8b263e;
+      --text-white: #ffffff;
+      --text-muted: #94a3b8;
+      --text-dark: #1e293b;
+      --border-dark: rgba(255, 255, 255, 0.12);
+      --border-light: #e2e8f0;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body, html, a, button, input, select, textarea {
+      cursor: url('cursor-icon.png'), auto !important;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      color: var(--text-white);
+      background-color: var(--bg-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      background-color: rgba(7, 12, 20, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-dark);
+      z-index: 1000;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 75px;
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-seal {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+    }
+
+    .main-nav {
+      display: flex;
+      gap: 32px;
+    }
+
+    .main-nav a {
+      color: var(--text-white);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .main-nav a:hover {
+      color: var(--accent-cyan);
+    }
+
+    .hero-section {
+      position: relative;
+      background: linear-gradient(180deg, #060b13 0%, #0d1726 100%),
+                  url('hero-bg-data-drift.jpg') center/cover no-repeat;
+      padding: 60px 0 100px;
+      border-bottom: 1px solid var(--border-dark);
+      overflow: hidden;
+    }
+
+    .robot-stage {
+      width: 100%;
+      height: 100px;
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .walking-robot {
+      position: absolute;
+      top: 0;
+      left: -120px;
+      animation: walkAcross 20s linear infinite;
+    }
+
+    .walking-robot img {
+      height: 90px;
+      width: auto;
+    }
+
+    @keyframes walkAcross {
+      0% { left: -120px; transform: scaleX(1); }
+      48% { left: calc(100% + 50px); transform: scaleX(1); }
+      50% { left: calc(100% + 50px); transform: scaleX(-1); }
+      98% { left: -120px; transform: scaleX(-1); }
+      100% { left: -120px; transform: scaleX(1); }
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 320px 1fr 220px;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .hero-card-left {
+      background: rgba(15, 25, 40, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      padding: 24px;
+      border-radius: 8px;
+      font-size: 0.92rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+    }
+
+    .hero-center-content {
+      text-align: center;
+    }
+
+    .hero-center-content h1 {
+      font-family: var(--font-serif);
+      font-size: 3.5rem;
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .hero-center-content h2 {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      font-weight: 400;
+      color: #ffffff;
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+
+    .hero-center-content h3 {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-style: italic;
+      color: var(--accent-cyan);
+      font-weight: 400;
+    }
+
+    .hero-right-ids {
+      text-align: right;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: #94a3b8;
+    }
+
+    .hero-right-ids div {
+      margin-bottom: 6px;
+    }
+
+    .sba-section {
+      background-color: #17202d;
+      padding: 50px 0;
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .sba-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .sba-bullets h3 {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 400;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+
+    .sba-badges-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 12px;
+    }
+
+    .badges-row {
+      display: flex;
+      gap: 20px;
+    }
+
+    .sba-badge-box {
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 16px 24px;
+      border-radius: 6px;
+      background: rgba(0, 0, 0, 0.2);
+      text-align: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+    }
+
+    .sba-cert-id {
+      font-size: 0.8rem;
+      color: #64748b;
+    }
+
+    .governance-section {
+      padding: 90px 0;
+      background-color: var(--bg-dark);
+    }
+
+    .pill-badge {
+      display: inline-block;
+      padding: 6px 16px;
+      background-color: #0284c7;
+      color: #ffffff;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: 2.5rem;
+      font-weight: 400;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .section-lead {
+      max-width: 850px;
+      margin: 0 auto 60px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .cards-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .gov-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-dark);
+      padding: 28px 20px;
+      border-radius: 8px;
+    }
+
+    .gov-card h4 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .gov-card .tag {
+      font-size: 0.8rem;
+      color: var(--accent-cyan);
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .gov-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .high-stakes-section {
+      padding: 80px 0;
+      background-color: #0b1320;
+    }
+
+    .banner-title {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-dark);
+      padding: 16px;
+      text-align: center;
+      font-family: var(--font-sans);
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      margin-bottom: 40px;
+      border-radius: 6px;
+    }
+
+    .cards-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .stake-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-dark);
+      padding: 28px;
+      border-radius: 8px;
+    }
+
+    .stake-card h4 {
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+
+    .stake-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .booking-section {
+      padding: 90px 0;
+      background-color: #ffffff;
+      color: var(--text-dark);
+    }
+
+    .booking-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .services-quotes {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .quote-item {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      font-weight: 400;
+      line-height: 1.25;
+      color: #0f172a;
+      border-left: 3px solid var(--accent-blue);
+      padding-left: 20px;
+    }
+
+    .scopy-embed-card {
+      background-color: #0d1522;
+      color: #ffffff;
+      border-radius: 12px;
+      padding: 32px;
+      border: 1px solid var(--border-dark);
+    }
+
+    .scopy-header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .scopy-header .badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #38bdf8;
+      letter-spacing: 0.08em;
+    }
+
+    .scopy-header h3 {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      margin: 8px 0;
+    }
+
+    .downloads-pecb-section {
+      padding: 80px 0;
+      background-color: var(--bg-dark);
+      border-top: 1px solid var(--border-dark);
+    }
+
+    .downloads-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .accordion-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .accordion-item {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-dark);
+      padding: 18px 24px;
+      border-radius: 6px;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .pecb-card {
+      text-align: center;
+    }
+
+    .pecb-img {
+      max-width: 100%;
+      border-radius: 8px;
+      border: 1px solid var(--border-dark);
+    }
+
+    .contact-section {
+      padding: 90px 0;
+      background-color: #ffffff;
+      color: var(--text-dark);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .contact-photo {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    .contact-form h3 {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      margin-bottom: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--border-light);
+      border-radius: 6px;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+    }
+
+    .btn-submit {
+      background-color: #0f172a;
+      color: #ffffff;
+      padding: 12px 32px;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    .testimonial-section {
+      padding: 100px 0;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('facility-bg.jpg') center/cover no-repeat;
+      text-align: center;
+    }
+
+    .quote-box {
+      max-width: 800px;
+      margin: 0 auto 30px;
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-style: italic;
+      line-height: 1.4;
+    }
+
+    .btn-burgundy {
+      background-color: var(--accent-burgundy);
+      color: #ffffff;
+      padding: 12px 28px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+      margin: 0 8px;
+    }
+
+    .site-footer {
+      padding: 60px 0;
+      background-color: #04080f;
+      border-top: 1px solid var(--border-dark);
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .footer-flex {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .footer-brand {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid, .sba-grid, .cards-grid-4, .cards-grid-3, .booking-grid, .downloads-grid, .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-center-content h1 { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="logo-wrap">
+        <img src="logo-seal.png" alt="Sentinel Paradise Seal" class="logo-seal" onerror="this.onerror=null; this.src='https://via.placeholder.com/42?text=SP';" />
+      </a>
+      <nav class="main-nav">
+        <a href="capabilities.html">Capabilities</a>
+        <a href="academy.html">Sentinel Academy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <div class="container">
+        <div class="robot-stage">
+          <div class="walking-robot">
+            <img src="custom-robot.gif" alt="Sentinel AI Robot" onerror="this.onerror=null; this.parentNode.innerHTML='🤖';" />
+          </div>
+        </div>
+
+        <div class="hero-grid">
+          <div class="hero-card-left">
+            Sentinel Paradise is a governance and risk management firm. We implement and align Artificial Intelligence Management Systems with the CMMC NIST 800 Framework, delivering audit readiness and bias risk assessments tailored for Tech and Aerospace Industries.
+          </div>
+
+          <div class="hero-center-content">
+            <h1>The Sentinel</h1>
+            <h2>Supplying Compliance for Aerospace & Defense.</h2>
+            <h3>De-risking Federal and Commercial AI Systems Deployment</h3>
+          </div>
+
+          <div class="hero-right-ids">
+            <div>CAGE CODE: 23T41</div>
+            <div>UEI: L1Y35AM1LMC9</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sba-section">
+      <div class="container sba-grid">
+        <div class="sba-bullets">
+          <h3>100% Audit Readiness</h3>
+          <h3>Accelerated Acquisition</h3>
+          <h3>Secured Infrastructure</h3>
+        </div>
+
+        <div class="sba-badges-wrap">
+          <div class="badges-row">
+            <div class="sba-badge-box">8(a) CERTIFIED</div>
+            <div class="sba-badge-box">WOSB CERTIFIED</div>
+            <div class="sba-badge-box">EDWOSB CERTIFIED</div>
+          </div>
+          <div class="sba-cert-id">self certification ID: 09202690015</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="governance-section">
+      <div class="container">
+        <div style="text-align: center;">
+          <span class="pill-badge">INFRASTRUCTURE-INTEGRATED GOVERNANCE</span>
+          <h2 class="section-title">Why Checklist-Only Governance Fails</h2>
+          <p class="section-lead">
+            Traditional auditors read static checklists and walk away. They don't understand defense supply chain operations, cloud enclave architecture, or machine learning telemetry. Sentinel Paradise designs, builds, and verifies your actual secure data boundaries, endpoint controls, and AI workflows—keeping your operations compliant and your federal contracts audit-ready.
+          </p>
+        </div>
+
+        <div class="cards-grid-4">
+          <div class="gov-card">
+            <h4>Defense Enclave Engineering</h4>
+            <div class="tag">CMMC Level 2 | NIST SP 800-171 | DFARS</div>
+            <p>We build lean, isolated Program Enclaves using PreVeil and FutureFeed to protect Controlled Unclassified Information (CUI) without exposing your broader commercial business to audit scope.</p>
+          </div>
+
+          <div class="gov-card">
+            <h4>ISO 42001 AI Implementation</h4>
+            <div class="tag">AI Governance (AIMS) | CUI Safeguards | HITL Workflows</div>
+            <p>Commercial AI tools introduce severe data-leakage risks. We deploy your complete AI Management System, enforcing strict Human-in-the-Loop (HITL) rules and Acceptable Use Policies to keep operational innovation fast and CUI safe.</p>
+          </div>
+
+          <div class="gov-card">
+            <h4>ISO 42001 AI Audits & Pre-Assessments</h4>
+            <div class="tag">Telemetry Verification | Data Hygiene | Gap Analysis</div>
+            <p>We execute rigorous internal audits, data telemetry checks, and risk evaluations to verify that your AI workflows, training datasets, and automated safeguards satisfy ISO/IEC standards before formal certification.</p>
+          </div>
+
+          <div class="gov-card">
+            <h4>Real-Time Executive Command</h4>
+            <div class="tag">Continuous Visibility | SPRS Scoring | Board Readiness</div>
+            <p>We convert your SPRS score, defense risk posture, and AI compliance metrics into a single real-time dashboard—giving executive leadership instant visibility and fast sign-off capability for upcoming DoD bids.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="high-stakes-section">
+      <div class="container">
+        <div class="banner-title">WHY THIS MATTERS FOR HIGH-STAKES PROGRAMS</div>
+
+        <div class="cards-grid-3">
+          <div class="stake-card">
+            <h4>Accelerated Readiness</h4>
+            <p>Reduce audit cycle times and eliminate evidence gaps with automated harvesting tuned to certification workflows.</p>
+          </div>
+
+          <div class="stake-card">
+            <h4>Proactive Risk Reduction</h4>
+            <p>Lower operational and reputational risk by exposing algorithmic failure modes, drift, and bias early and continuously.</p>
+          </div>
+
+          <div class="stake-card">
+            <h4>Defensible AI Procurement</h4>
+            <p>Make SaaS and vendor integration decisions with clear, quantified third-party risk profiles and threat modeling.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking-section">
+      <div class="container booking-grid">
+        <div class="services-quotes">
+          <div class="quote-item">“Schedule an ISO 42001 AI Audit”</div>
+          <div class="quote-item">“Assess Your SPRS & CMMC Level 2 Readiness”</div>
+          <div class="quote-item">“Consult on Secure Cloud & Web Architecture”</div>
+          <div class="quote-item">“Executive AI Governance Training”</div>
+        </div>
+
+        <div class="scopy-embed-card">
+          <div class="scopy-header">
+            <div class="badge">SENTINEL PARADISE SECURITY & LEISURE</div>
+            <h3>Schedule Your Private Session</h3>
+            <p style="font-size: 0.85rem; color: #94a3b8;">Select your consultation window below to access our live confidential calendar.</p>
+          </div>
+
+          <div id="scopy-calendar-widget">
+            <iframe src="https://your-username.github.io/scopy/" width="100%" height="550px" style="border:none; border-radius:8px;"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="downloads-pecb-section">
+      <div class="container downloads-grid">
+        <div>
+          <h3 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 24px;">DOWNLOADS</h3>
+          <div class="accordion-list">
+            <div class="accordion-item">
+              <span>Sample Audit Report pg 1</span>
+              <span>↓</span>
+            </div>
+            <div class="accordion-item">
+              <span>Sample Audit Report pg 2</span>
+              <span>↓</span>
+            </div>
+            <div class="accordion-item">
+              <span>Sample Audit Report pg 3</span>
+              <span>↓</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pecb-card">
+          <img src="pecb-certificate.png" alt="PECB Certification - Desiree Moore" class="pecb-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/500x350?text=PECB+ISO+42001+Certificate';" />
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="container contact-grid">
+        <div>
+          <img src="desiree-moore-photo.jpg" alt="Desiree Moore" class="contact-photo" onerror="this.onerror=null; this.src='https://via.placeholder.com/500x500?text=Desiree+Moore+Photo';" />
+        </div>
+
+        <div class="contact-form">
+          <h3>QUESTIONS? ASK US!</h3>
+          <form action="#" method="POST">
+            <div class="form-group">
+              <label>Name (required)</label>
+              <input type="text" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+              <label>Email (required)</label>
+              <input type="email" class="form-control" required />
+            </div>
+
+            <div class="form-group" style="display: flex; gap: 8px; align-items: center;">
+              <input type="checkbox" id="news" />
+              <label for="news" style="margin-bottom: 0;">Sign up for news and updates</label>
+            </div>
+
+            <div class="form-group">
+              <label>Question (required)</label>
+              <textarea class="form-control" rows="4" placeholder="Are Discovery Call Fees Applicable to the Total Cost?" required></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Ask</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonial-section">
+      <div class="container">
+        <div class="quote-box">
+          “Sentinel Academy brought everything into focus—my skills, my confidence, and my direction in compliance.”
+        </div>
+        <p style="color: #94a3b8; margin-bottom: 24px;">— Maya, Technical Lead</p>
+        <div>
+          <a href="academy.html" class="btn-burgundy">Learn More</a>
+          <a href="#" class="btn-burgundy">Back to Top</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-flex">
+      <div>
+        <div class="footer-brand">Sentinel Paradise.ai</div>
+        <p>Corridor of Innovation</p>
+        <p>Los Angeles, CA 90015</p>
+        <p style="margin-top: 12px;">ops@sentinelparadise.ai</p>
+        <p>(562) 225-9516</p>
+      </div>
+
+      <div>
+        <h4 style="color: #ffffff; margin-bottom: 12px;">Hours</h4>
+        <p>Monday - Friday</p>
+        <p>10am - 4pm</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
